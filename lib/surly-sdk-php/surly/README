@@ -1,0 +1,17 @@
+1. Create account on sur.ly
+2. Add website to your account
+3. Connect and initialize you SDK module:
+
+require_once(dirname(__FILE__) . ‘/modules/surly/Surly.php’);
+$surly = new Surly($toolbarId);
+
+4. Add your website and/or other websites to whitelist
+
+$surly->whitelist(@$_SERVER[‘HTTP_HOST']);
+$surly->whitelist(‘http://wikipedia.org’);
+
+5. Process single urls, multiple urls as array or even html
+
+$surly->process($html);
+$surly->processUrl($url);
+$surly->processMultipleUrls($urls);
